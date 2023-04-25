@@ -572,8 +572,8 @@ int nvram_set_int(const char *key, const int val) {
 }
 
 int nvram_set_default(void) {
-    int ret = nvram_set_default_builtin();
-    PRINT_MSG("Loading built-in default values = %d!\n", ret);
+    // int ret = nvram_set_default_builtin();
+    // PRINT_MSG("Loading built-in default values = %d!\n", ret);
 
 #define NATIVE(a, b) \
     if (!system(a)) { \
@@ -596,6 +596,8 @@ int nvram_set_default(void) {
 #undef NATIVE
 #undef TABLE
 
+    int ret = nvram_set_default_builtin();
+    PRINT_MSG("Loading built-in default values = %d!\n", ret);
     return nvram_set_default_image();
 }
 
