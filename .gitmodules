@@ -1,0 +1,3 @@
+[submodule "libnvram"]
+	path = libnvram
+	url = https://github.com/firmadyne/libnvram
