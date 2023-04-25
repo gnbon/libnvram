@@ -48,6 +48,23 @@ Create the NVRAM storage directories on the filesystem:
 This will be automatically loaded by the instrumented kernel through
 `LD_PRELOAD` by modifications to `init/main.c`.
 
+### qemu-usermode approach
+
+Execute the emulation by preloading `libnvram.so` using `LD_PRELOAD`:
+
+`sudo chroot . ./qemu-arm-static -E LD_PRELOAD=./firmadyne/libnvram/libnvram.so $binary`
+
+This command will launch the target binary inside the chroot environment, with `libnvram.so` preloaded. The `LD_PRELOAD` environment variable is used to specify the path to the `libnvram.so` file.
+
+Check the debug message for any error keys and rebuild by modifying `config.h`:
+
+```
+nvram_get_buf: Unable to open key: /firmadyne/libnvram/upnpd_debug_level!
+qemu: uncaught target signal 11 (Segmentation fault) - core dumped
+```
+
+If there are any error messages, you may need to modify the `config.h` file to correct them.
+
 Notes
 =====
 
