@@ -70,6 +70,15 @@
     /* Used by "DGND3700 Firmware Version 1.0.0.17(NA).zip" (3425) to prevent crashes */ \
     ENTRY("time_zone_x", nvram_set, "0") \
     ENTRY("rip_multicast", nvram_set, "0") \
-    ENTRY("bs_trustedip_enable", nvram_set, "0")
+    ENTRY("bs_trustedip_enable", nvram_set, "0") \
+    /* Used by "R8300-V1.0.2.130_1.0.99.zip" to prevent crashes */
+    ENTRY("upnpd_debug_level", nvram_set, "9") \
+    ENTRY("hwrev", nvram_set, "MP1T99") \
+    ENTRY("friendly_name", nvram_set, "R8300") \
+    ENTRY("lan_hwaddr", nvram_set, "01:23:45:67:89:ab") \
+    ENTRY("upnp_duration", nvram_set, "3600") \
+    ENTRY("upnp_turn_on", nvram_set, "1") \
+    ENTRY("upnp_advert_ttl", nvram_set, "4") \
+    ENTRY("upnp_advert_period", nvram_set, "30")
 
 #endif
