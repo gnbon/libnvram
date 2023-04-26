@@ -71,7 +71,7 @@
     ENTRY("time_zone_x", nvram_set, "0") \
     ENTRY("rip_multicast", nvram_set, "0") \
     ENTRY("bs_trustedip_enable", nvram_set, "0") \
-    /* Used by "R8300-V1.0.2.130_1.0.99.zip" to prevent crashes */
+    /* Used by "R8300-V1.0.2.130_1.0.99.zip" to prevent crashes */ \
     ENTRY("upnpd_debug_level", nvram_set, "9") \
     ENTRY("hwrev", nvram_set, "MP1T99") \
     ENTRY("friendly_name", nvram_set, "R8300") \
